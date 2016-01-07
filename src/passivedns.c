@@ -1150,8 +1150,11 @@ void show_version()
 #endif /* HAVE_JSON */
 }
 
+#ifdef LIBPASSIVEDNS
+void init_passivedns() {
+};
+#else
 extern int optind, opterr, optopt; // getopt()
-
 /* magic main */
 int main(int argc, char *argv[])
 {
@@ -1503,4 +1506,4 @@ int main(int argc, char *argv[])
     game_over();
     return 0;
 }
-
+#endif
